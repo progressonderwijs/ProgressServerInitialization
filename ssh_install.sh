@@ -24,6 +24,7 @@ SSH_KEYS="$SSH_DIR/authorized_keys"
 
 if ! grep -q $USER /etc/passwd ; then
     adduser --disabled-password --ingroup $GROUP --gecos "" $USER
+    passwd $USER
 fi
 
 adduser $USER sudo 
