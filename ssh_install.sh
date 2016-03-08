@@ -27,7 +27,7 @@ fi
 
 adduser $USER sudo 
 
-if [ ! -d "$SSH_DIR""]; then
+if [ ! -d "$SSH_DIR"]; then
     mkdir $SSH_DIR
     chown $USER:$GROUP $SSH_DIR
 fi
