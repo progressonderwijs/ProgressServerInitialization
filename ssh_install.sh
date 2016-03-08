@@ -19,7 +19,7 @@ fi
 # de progadmin user die met ssh kan inloggen
 #
 USER="progadmin"
-SSH_DIR="~$USER/.ssh"
+SSH_DIR="/home/$USER/.ssh"
 
 if ! grep -q $USER /etc/passwd ; then
     adduser --disabled-password --ingroup $GROUP --gecos "" $USER
