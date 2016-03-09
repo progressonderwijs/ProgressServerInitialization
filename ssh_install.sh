@@ -51,7 +51,5 @@ if ! grep -q AllowGroups $SshConfigFile ; then
     sed -i "/PubkeyAuthentication yes/a AllowGroups $SshGroep" $SshConfigFile
 fi
 
-service ssh restart
-
 # reboot voor het gemak ...
 reboot now
