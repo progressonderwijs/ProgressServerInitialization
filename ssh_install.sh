@@ -1,28 +1,34 @@
 #!/bin/bash
 
+# Parameters en helpers
+#
+SshGroup="sshers"
+SshAccount="progadmin"
+SshAccountConfigDir="/home/$SshAccount/.ssh"
+SshAccountAuthKeys="$SshAccountConfigDir/authorized_keys"
+SshConfigFile="/etc/ssh/sshd_config"
+
+EnsureSshSetting () {
+    grep -q "^#\{0,1\}$1" $SshConfigFile && sed -i "/^#\{0,1\}$1/c\\$1 $2" $SshConfigFile || sed -i "$ a\\$1 $2" $SshConfigFile
+}
+
 # abort on errors
 #
 set -e
 
 # ga van een up-to-date omgeving uit
 #
-apt-get update
-apt-get upgrade
+apt-get -y update
+apt-get -y upgrade
 
 # we willen dat alleen users in deze group kunnen ssh-en
 #
-SshGroup="sshers"
-
 if ! grep -q $SshGroup /etc/group ; then
     adduser -group $SshGroup
 fi
 
 # de progadmin user die met ssh kan inloggen
 #
-SshAccount="progadmin"
-SshAccountConfigDir="/home/$SshAccount/.ssh"
-SshAccountAuthKeys="$SshAccountConfigDir/authorized_keys"
-
 if ! grep -q $SshAccount /etc/passwd ; then
     adduser --disabled-password --ingroup $SshGroup --gecos "" $SshAccount
     passwd $SshAccount
@@ -40,17 +46,10 @@ echo "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAp0rISNC+CVaW21VRQKQdMUjuuHOxtak2GUS9dl
 chown $SshAccount:$SshGroup $SshAccountAuthKeys
 
 # install open-sshserver
-#
-SshConfigFile="/etc/ssh/sshd_config"
-
-EnsureSshSetting () {
-    grep -q "^#\{0,1\}$1" $SshConfigFile && sed -i "/^#\{0,1\}$1/c\\$1 $2" $SshConfigFile || sed -i "$ a\\$1 $2" $SshConfigFile
-}
-
-apt-get install openssh-server
-
 # secure setting as taken from http://hardenubuntu.com/hardening/ssh/sshd-config/
 #
+apt-get install openssh-server
+
 EnsureSshSetting AllowUsers $SshAccount
 EnsureSshSetting AllowGroups $SshGroup
 EnsureSshSetting PermitRootLogin no
