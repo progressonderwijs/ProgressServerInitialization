@@ -19,7 +19,7 @@ set -e
 # ga van een up-to-date omgeving uit
 #
 apt-get -y update
-apt-get -y upgrade
+apt-get -y dist-upgrade
 
 # we willen dat alleen users in deze group kunnen ssh-en
 #
