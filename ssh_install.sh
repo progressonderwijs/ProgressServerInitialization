@@ -6,8 +6,8 @@ set -e
 
 # ga van een up-to-date omgeving uit
 #
-apt-get update
-apt-get upgrade
+apt-get -y update
+apt-get -y upgrade
 
 # we willen dat alleen users in deze group kunnen ssh-en
 #
