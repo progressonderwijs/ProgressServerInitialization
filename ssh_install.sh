@@ -46,7 +46,7 @@ echo "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAp0rISNC+CVaW21VRQKQdMUjuuHOxtak2GUS9dl
 chown $SshAccount:$SshGroup $SshAccountAuthKeys
 
 # install open-sshserver
-# secure setting as taken from http://hardenubuntu.com/hardening/ssh/sshd-config/
+# secure setting as taken from http://bookofzeus.com/harden-ubuntu/hardening/ssh/
 #
 apt-get install openssh-server
 
