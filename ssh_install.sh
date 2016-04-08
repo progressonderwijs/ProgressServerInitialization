@@ -48,7 +48,7 @@ chown $SshAccount:$SshGroup $SshAccountAuthKeys
 # install open-sshserver
 # secure setting as taken from http://bookofzeus.com/harden-ubuntu/hardening/ssh/
 #
-apt-get install openssh-server
+apt-get -y install openssh-server
 
 EnsureSshSetting AllowUsers $SshAccount
 EnsureSshSetting AllowGroups $SshGroup
