@@ -58,7 +58,7 @@ EnsureSshSetting PermitUserEnvironment no
 EnsureSshSetting PrintLastLog no
 EnsureSshSetting PasswordAuthentication no
 EnsureSshSetting Protocol 2
-EnsureSshSetting ClientAliveInterval 300
+EnsureSshSetting ClientAliveInterval 1800
 EnsureSshSetting ClientAliveCountMax 0
 EnsureSshSetting HostbasedAuthentication no
 EnsureSshSetting MaxStartups 2
