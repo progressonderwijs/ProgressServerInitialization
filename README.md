@@ -1,6 +1,8 @@
 # ProgressServerInitialization
 Repository voor minimalistische VM initialization totdat het netwerk werkt.
 
+NB: Dit script installeert alleen de initiele ssh; voor verdere configuratie de [systeembeheer](https://github.com/progressonderwijs/systeembeheer/tree/master/linux-machines) repo gebruiken.
+
 NB: eerst de firewall volledig configureren, daarna pas de VPN machine initialiseren. Anders kan de VPN-machine niet naar buiten toe.
 
 - Console login op de VM machine (root).
