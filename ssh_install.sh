@@ -69,5 +69,6 @@ EnsureSshSetting UsePAM no
 
 # reboot voor het gemak ...
 #
+echo "rebooting ..."
 reboot now
 
