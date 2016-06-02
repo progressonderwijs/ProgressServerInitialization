@@ -10,6 +10,6 @@ NB: Dit script installeert alleen de initiele ssh; voor verdere configuratie de 
 - Open console en login op de VM machine (root).
 - Configureer het ip-adres in ``/etc/network/interfaces`` (xx aanpassen) en zet eth0 aan (gebruik b.v. nano als editor);
 - Herstart netwerk met ``/etc/init.d/networking restart``
-- Download het ssh-installatiescript met ``./wget_script``.
+- Download het ssh-installatiescript met ``./wget_script.sh``.
 - Run het ssh-installatiescript ``./ssh_install.sh``.
 
