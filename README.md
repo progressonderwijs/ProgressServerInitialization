@@ -8,7 +8,7 @@ NB: Dit script installeert alleen de initiele ssh; voor verdere configuratie de 
 - Login op VCenter (VMWare manager).
 - Start virtuele machine progress-[omgeving]-fw (firewall/vpn machine).
 - Open console en login op de VM machine (root).
-- Configureer het ip-adres in ``/etc/network/interfaces`` (xx aanpassen) en zet eth0 aan;
+- Configureer het ip-adres in ``/etc/network/interfaces`` (xx aanpassen) en zet eth0 aan (gebruik b.v. nano als editor);
 - Herstart netwerk met ``/etc/init.d/networking restart``
 - Download het ssh-installatiescript met ``./wget_script``.
 - Run het ssh-installatiescript ``./ssh_install.sh``.
