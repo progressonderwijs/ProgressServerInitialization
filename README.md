@@ -12,4 +12,5 @@ NB: Dit script installeert alleen de initiele ssh; voor verdere configuratie de 
 - Herstart netwerk met ``/etc/init.d/networking restart``
 - Download het ssh-installatiescript met ``./wget_script.sh``.
 - Run het ssh-installatiescript ``./ssh_install.sh``.
+- Voer het wachtwoord in voor user progadmin.
 
