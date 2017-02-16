@@ -9,7 +9,8 @@
   - Zet eth0 aan door het '#' te verwijderen
 - Herstart netwerk met ``/etc/init.d/networking restart``
 - Download het ssh-installatiescript met ``./wget_script.sh``
-- Run het ssh-installatiescript ``./ssh_install.sh`` (dit duurt ca 3 minuten)
+- Run het ssh-installatiescript ``./ssh_install.sh`` (dit duurt een aantal minuten)
+- Het script vraagt om 'configuring nullmailer'. Klik op 'Cancel' (2x).
 - Het script vraag om het wachtwoord voor user progadmin. Dit staat in de keepass database in het lokale netwerk Deployment.kdbx.
 - Na ca 1 minuut is het script klaar (inclusief een reboot). De console staat nu op de inlogprompt.
 
